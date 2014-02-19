@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Maps One Apk</string>
+    <string name="title_section1">Maps</string>
+    <string name="title_section2">IAP</string>
+    <string name="title_section3">Notifications</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
