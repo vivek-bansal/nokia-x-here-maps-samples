@@ -3,7 +3,7 @@
  *  See the license text file delivered with this project for more information.
  */
 
-package com.nokia.example.singleapk;
+package com.nokia.example.mapsv2oneapk;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,8 +17,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Google Maps version of fragment that draws the map. This fragment is instantiated in the
- * {@link com.nokia.example.singleapk.MainActivity} and inserted to the layout if HERE libraries are not available.
- * This file is identical to {@link com.nokia.example.singleapk.MapsFragmentHere} except for import statements
+ * {@link com.nokia.example.mapsv2oneapk.MainActivity} and inserted to the layout if HERE libraries are not available.
+ * This file is identical to {@link com.nokia.example.mapsv2oneapk.MapsFragmentHere} except for import statements
  * and Resource ID's used
  */
 public class MapsFragmentGoogle extends Fragment {

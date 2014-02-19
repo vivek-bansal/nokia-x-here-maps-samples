@@ -3,7 +3,7 @@
  *  See the license text file delivered with this project for more information.
  */
 
-package com.nokia.example.singleapk;
+package com.nokia.example.mapsv2oneapk;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
