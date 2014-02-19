@@ -16,23 +16,27 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
- * TODO: Oneliner about class
- * <p/>
- * TODO: Description of the class
- * {@author} riku salkia
- * {@version} 1.0.0
- * {@since} 17.2.2014
+ * Google Maps version of fragment that draws the map. This fragment is instantiated in the
+ * {@link com.nokia.example.singleapk.MainActivity} and inserted to the layout if HERE libraries are not available.
+ * This file is identical to {@link com.nokia.example.singleapk.MapsFragmentHere} except for import statements
+ * and Resource ID's used
  */
 public class MapsFragmentGoogle extends Fragment {
 
+    /**
+     * Resource ID to Google Maps version of layout
+     */
     public static final int FRAGMENT_LAYOUT = R.layout.fragment_map_google;
+
+    /**
+     * Resource ID of the {@link com.google.android.gms.maps.SupportMapFragment}
+     */
     public static final int FRAGMENT_ID = R.id.fragment_map_google;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(FRAGMENT_LAYOUT, container, false);
-        return rootView;
+        return inflater.inflate(FRAGMENT_LAYOUT, container, false);
     }
 
     @Override
