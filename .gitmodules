@@ -1,3 +1,6 @@
 [submodule "MapsV2OneApk/nokia-x-here-maps-wrapper-v2"]
 	path = MapsV2OneApk/nokia-x-here-maps-wrapper-v2
 	url = https://github.com/nokia-developer/nokia-x-here-maps-wrapper-v2.git
+[submodule "MapsV1OneApk/nokia-x-here-maps-wrapper-v1"]
+	path = MapsV1OneApk/nokia-x-here-maps-wrapper-v1
+	url = C:/Projects/Nokia/Projects/_GITHUB/nokia-x-here-maps-wrapper-v1
