@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014 Nokia Corporation and/or its subsidiary(-ies).
+    See the license text file delivered with this project for more information.
+-->
+<resources>
+    <string name="app_name">HelloHEREMaps</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">HERE :: Routing</string>
+    <string name="label_button_getdirections">Get Directions</string>
+    <string name="textview_routecoordinates_2waypoints">Press "Get Directions" button to calculate a route:\nStart: Nokia, Burnaby\nEnd: Airport, YVR</string>
+</resources>
