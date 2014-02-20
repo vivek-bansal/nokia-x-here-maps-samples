@@ -39,12 +39,15 @@
             android:name="com.google.android.maps"
             android:required="false"/>
 
+        <!-- TODO: Insert your HERE appid here -->
         <meta-data
             android:name="com.here.android.maps.appid"
-            android:value="YOUR ID"/>
+            android:value=""/>
+
+        <!-- TODO: Insert your HERE apptoken here -->
         <meta-data
             android:name="com.here.android.maps.apptoken"
-            android:value="YOUR TOKEN"/>
+            android:value=""/>
 
         <activity
             android:name="com.nokia.example.mapsv1oneapk.MainActivity"
