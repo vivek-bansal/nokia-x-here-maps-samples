@@ -20,7 +20,6 @@
         android:layout_height="match_parent"
         android:enabled="true"
         android:clickable="true"
-        android:apiKey="@string/here_maps_api_key"
         />
 
 </RelativeLayout>

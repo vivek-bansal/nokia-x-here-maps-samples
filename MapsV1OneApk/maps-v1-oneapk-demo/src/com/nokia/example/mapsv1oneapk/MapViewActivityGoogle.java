@@ -6,7 +6,7 @@
 package com.nokia.example.mapsv1oneapk;
 
 import android.os.Bundle;
-import com.nokia.android.maps.MapActivity;
+import com.google.android.maps.MapActivity;
 
 /**
  *
