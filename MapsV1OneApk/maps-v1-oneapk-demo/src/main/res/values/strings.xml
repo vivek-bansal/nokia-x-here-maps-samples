@@ -1,0 +1,11 @@
+<!--
+  ~ Copyright (c) 2014 Nokia Corporation and/or its subsidiary(-ies).
+  ~ See the license text file delivered with this project for more information.
+  -->
+
+<resources>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
