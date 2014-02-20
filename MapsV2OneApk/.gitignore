@@ -1,0 +1,18 @@
+# IDEA / Android Studio
+*.iml
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Gradle
+local.properties
+.gradle/
+
+# Generated files
+bin/
+build/
+gen/
+
