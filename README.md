@@ -1,5 +1,5 @@
-Nokia X HERE Maps samples
-=========================
+HERE API samples for Nokia X
+============================
 
 This project contains the simple examples demonstrating how to implement and
 port an application to utilise HERE Maps on Nokia X software platform.
