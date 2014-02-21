@@ -1,5 +1,5 @@
-HERE Maps API sample: BasicMapSolution
-======================================
+HERE API sample: BasicMapSolution
+=================================
 
 This Nokia sample application uses the HERE library to demonstrate the basic
 HERE API capabilities. The app will display a map around Vancouver region in
