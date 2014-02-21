@@ -1,5 +1,5 @@
-HERE Maps API sample: SimpleRoutingSolution
-===========================================
+HERE API sample: SimpleRoutingSolution
+======================================
 
 This Nokia sample application uses the HERE library to show various map schemes
 supported by HERE. The app will show a map around Vancouver region in Canada
