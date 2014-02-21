@@ -1,0 +1,11 @@
+# This is a configuration file for ProGuard and Nokia X services.
+# You might still want to include the default proguard-android.txt as well
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+
+-keep class com.nokia.** { *; }
+-keep interface com.nokia.** { *; }
+-dontwarn com.nokia.**
+-keep class com.here.** { *; }
+-keep interface com.here.** { *; }
+-dontwarn com.here.**
+-libraryjars com.here.android.sdk.jar
