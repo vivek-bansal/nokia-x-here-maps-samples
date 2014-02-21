@@ -32,6 +32,11 @@ Gradle wrapper by executing:
 gradlew.bat clean installDebug
 ```
 
+Gradle resolves Google Play services and Support library dependencies using the
+local repositories. Make sure you have installed them using the SDK manager.
+Launch Android SDK manager and make sure you have checked **Android Support
+Repository** and **Google Repository** checkboxes from the **Extras** section.
+
 Known issues
 --------------------------------------------------------------------------------
 
