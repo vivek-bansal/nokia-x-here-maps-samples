@@ -62,11 +62,13 @@
         </activity>
         <activity
             android:name=".MapViewActivityGoogle"
-            android:label="Maps v1 MapView">
+            android:label="Maps v1 MapView"
+            android:configChanges="orientation|screenSize">
         </activity>
         <activity
             android:name=".MapViewActivityHere"
-            android:label="HERE MapView">
+            android:label="HERE MapView"
+            android:configChanges="orientation|screenSize">
         </activity>
 
     </application>
