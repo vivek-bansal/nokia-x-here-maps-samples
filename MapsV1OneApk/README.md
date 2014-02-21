@@ -14,10 +14,10 @@ Instructions
 Import the project to your IDE. The recommended build target for the project is
 Google APIs/API level 16. 
 
-This sample application requires HERE reference library for Google Maps Android 
-API v1 to be added to the build path. HERE reference library for Google Maps 
-Android API v1 is hosted in a separate repository and added to this repository 
-as a submodule.
+This sample application requires Support library and HERE reference library for
+Google Maps Android API v1 to be added to the build path. HERE reference library
+for Google Maps Android API v1 is hosted in a separate repository and added to
+this repository as a submodule.
 
 This sample can be compiled and installed to attached device with the included 
 Gradle wrapper by executing:
