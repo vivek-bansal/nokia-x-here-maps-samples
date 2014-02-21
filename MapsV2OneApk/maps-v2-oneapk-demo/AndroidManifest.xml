@@ -54,7 +54,7 @@
         <!-- TODO: Insert your GoogleMaps v2 API KEY here -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAf43Hj6TvY2NWjBs62oPjPd8ePABTVzbU"/>
+            android:value=""/>
 
         <activity
             android:name="com.nokia.example.mapsv2oneapk.MainActivity"
