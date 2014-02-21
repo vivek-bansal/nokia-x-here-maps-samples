@@ -7,26 +7,40 @@ package com.nokia.example.mapsv1oneapk;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
     private static final String HERE_LIBRARY = "com.here.android";
+    /**
+     * String array of meta-data keys in AndroidManifest.xml we validate on launch. These keys need to be defined for the application to actually work.
+     */
+    private static final String[] REQUIRED_KEYS_ARRAY = {"com.here.android.maps.appid", "com.here.android.maps.apptoken"};
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Replace MainActivity with {@link MapViewActivityHere} or {@link MapViewActivityGoogle}
-        Intent intent;
-        if (hasHere()) {
-            intent = new Intent(this, MapViewActivityHere.class);
+        if (validateMetaData()) {
+            // Replace MainActivity with {@link MapViewActivityHere} or {@link MapViewActivityGoogle}
+            Intent intent;
+            if (hasHere()) {
+                intent = new Intent(this, MapViewActivityHere.class);
+            } else {
+                intent = new Intent(this, MapViewActivityGoogle.class);
+            }
+            startActivity(intent);
         } else {
-            intent = new Intent(this, MapViewActivityGoogle.class);
+            Toast.makeText(this, R.string.missing_metadata, Toast.LENGTH_LONG).show();
         }
-        startActivity(intent);
         finish();
     }
 
@@ -43,6 +57,27 @@ public class MainActivity extends Activity {
         }
 
         return false;
+    }
+
+    /**
+     * Validate that AndroidManifest.xml defines keys this application requires
+     *
+     * @return
+     */
+    private boolean validateMetaData() {
+        try {
+            ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            for (String key : REQUIRED_KEYS_ARRAY) {
+                if (TextUtils.isEmpty(bundle.getString(key))) {
+                    Log.d(TAG, "missing meta-data from AndroidManifest.xml. Undefined key " + key);
+                    return false;
+                }
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return true;
     }
 
     @Override

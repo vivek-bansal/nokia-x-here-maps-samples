@@ -5,27 +5,65 @@
 
 package com.nokia.example.mapsv2oneapk;
 
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
     private static final String HERE_LIBRARY = "com.here.android";
+    /**
+     * String array of meta-data keys in AndroidManifest.xml we validate on launch. These keys need to be defined for the application to actually work.
+     */
+    private static final String[] REQUIRED_KEYS_ARRAY = {"com.here.android.maps.appid", "com.here.android.maps.apptoken", "com.google.android.maps.v2.API_KEY"};
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Fragment fragment;
-        if (hasHere()) {
-            fragment = new MapsFragmentHere();
+        if (validateMetaData()) {
+            Fragment fragment;
+            if (hasHere()) {
+                fragment = new MapsFragmentHere();
+            } else {
+                fragment = new MapsFragmentGoogle();
+            }
+            getSupportFragmentManager().beginTransaction().add(R.id.map, fragment).commit();
         } else {
-            fragment = new MapsFragmentGoogle();
+            Toast.makeText(this, R.string.missing_metadata, Toast.LENGTH_LONG).show();
+            finish();
+            return;
         }
-        getSupportFragmentManager().beginTransaction().add(R.id.map, fragment).commit();
+
+    }
+
+    /**
+     * Validate that AndroidManifest.xml defines keys this application requires
+     *
+     * @return
+     */
+    private boolean validateMetaData() {
+        try {
+            ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            Bundle bundle = ai.metaData;
+            for (String key : REQUIRED_KEYS_ARRAY) {
+                if (TextUtils.isEmpty(bundle.getString(key))) {
+                    Log.d(TAG, "missing meta-data from AndroidManifest.xml. Undefined key " + key);
+                    return false;
+                }
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, e.getMessage());
+        }
+        return true;
     }
 
     /**
