@@ -1,5 +1,5 @@
-HERE Maps API sample: Single APK Maps v1 sample
-===============================================
+HERE API sample: Single APK Maps v1 sample
+==========================================
 
 This Nokia sample illustrates how to implement Google Maps v1 and HERE Maps
 offering in a single APK, and how to select the maps implementation to be used
